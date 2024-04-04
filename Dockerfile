@@ -18,4 +18,4 @@ WORKDIR /opt/dagster/app
 
 EXPOSE $RAILWAY_PORT
 
-ENTRYPOINT ["dagster-webserver", "-h", "0.0.0.0", "-p", $RAILWAY_PORT, "--path-prefix", "/app"]
+ENTRYPOINT ["dagster-webserver", "-h", "0.0.0.0", "-p", "$RAILWAY_PORT", "--path-prefix", "/app"]
