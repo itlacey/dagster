@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-ARG RAILWAY_PORT
+ARG PORT
 
 RUN mkdir -p /opt/dagster/dagster_home /opt/dagster/app
 
@@ -16,6 +16,6 @@ COPY dagster.yaml /opt/dagster/dagster_home/
 
 WORKDIR /opt/dagster/app
 
-EXPOSE $RAILWAY_PORT
+EXPOSE 3000
 
-ENTRYPOINT ["dagster-webserver", "-h", "0.0.0.0", "-p", "$RAILWAY_PORT", "--path-prefix", "/app"]
+ENTRYPOINT ["dagster-webserver", "-h", "0.0.0.0", "-p", "3000", "--path-prefix", "/app"]
