@@ -16,6 +16,6 @@ COPY dagster.yaml /opt/dagster/dagster_home/
 
 WORKDIR /opt/dagster/app
 
-EXPOSE $RAILWAY_PORT
+EXPOSE 3000
 
-ENTRYPOINT ["dagster-webserver", "-h", "0.0.0.0", "-p", $RAILWAY_PORT]
+ENTRYPOINT ["dagster-webserver", "-h", "0.0.0.0", "-p", "3000", "--path-prefix", "/app"]
